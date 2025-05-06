@@ -1,0 +1,34 @@
+name: pism-dev
+channels:
+  - conda-forge
+  - pism
+dependencies:
+  - python=3.11.7
+  - petsc
+  - petsc4py
+  - pixi
+  - yaxt
+  - yac
+  - cmake >=3.16
+  - stdlibs
+  - pkg-config
+  - make
+  - swig
+  - gnuconfig   # [unix]
+  - hdf5=*=*mpich*
+  - h5py=*=*mpich*
+  - netcdf-cxx4
+  - netcdf4=*=*mpich*
+  - fftw
+  - gsl >=1.15
+  - mpich
+  - mpich-mpicc
+  - mpich-mpicxx
+  - udunits2
+  - proj
+  - liblzma-devel  # Needed for `pkg-config --exists proj` on at least some python version
+  - libopenblas
+  - xarray
+  - matplotlib
+  - nco
+  - cdo
