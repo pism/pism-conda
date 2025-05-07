@@ -1,11 +1,9 @@
-name: dev-conda-petsc
+name: dev-with-petsc
 channels:
   - conda-forge
   - pism
 dependencies:
   - python=3.11.7
-  - petsc
-  - petsc4py
   - pixi
   - yaxt
   - yac

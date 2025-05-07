@@ -2,5 +2,7 @@ name: pism-conda
 channels:
   - conda-forge
 dependencies:
-  - python=3.11.7
+  - anaconda-client
+  - wget
   - pixi
+  - python=3.11.7
