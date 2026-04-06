@@ -9,22 +9,22 @@ Repository to build and test PISM conda packages
 
 Get pism-conda source from GitHub:
 
-    $ git clone git@github.com:pism/pism-conda.git
-    $ cd pism-conda
+    git clone git@github.com:pism/pism-conda.git
+    cd pism-conda
 
 Now create a conda environment named *pism-dev*. This installs a barebones environment suitable to build *staged-recipies*.
 
-    $ conda env create -f environment-conda.yml
-    $ conda activate pism-conda
+    conda env create -f environment-conda.yml
+    conda activate pism-conda
 
 
 ## Clone pism/staged-recipies. How can I just checkout pism-channel?
 
-    $ cd ..
-    $ mkdir -p pism-staged-recipies
-    $ git clone git@github.com:pism/staged-recipes.git . || (git checkout pism-channel && git pull)
-    $ cd pism-staged-recipies
-    $ pixi install
+    cd ..
+    mkdir -p pism-staged-recipies
+    git clone git@github.com:pism/staged-recipes.git . || (git checkout pism-channel && git pull)
+    cd pism-staged-recipies
+    pixi install
     
     
     
@@ -40,7 +40,7 @@ To bump the version of, e.g., *yac*, set the new version number in *meta.yml*:
 
 Download the tarball and extract sha256:
 
-    $ openssl sha256 yac-v3.7.0.tar.gz 
+    openssl sha256 yac-v3.7.0.tar.gz 
     
 Update the sha256 in *meta.yml*.
 
@@ -49,37 +49,46 @@ Update the sha256 in *meta.yml*.
 
 Before building, lint your changes:
 
-    $ pixi run lint
+    pixi run lint
 
 ### Build locally
 
 Depending on your architecture, run
 
-    $ pixi run build-linux
+    pixi run build-linux
  
 or 
 
-    $ pixi run build-osx
+    pixi run build-osx
 
+You may need to clean your path first, though
+
+    export PATH=/Users/andy/miniforge3/envs/pism-conda/bin:/usr/bin:/bin:/usr/sbin:/sbin
+    unset PYTHONPATH
+    unset CONDA_PREFIX
+    
 ### Uploading
 
-    $ anaconda upload build_artifacts/linux-64/*.conda
+    anaconda upload build_artifacts/linux-64/*.conda
 
 or
 
-    $ anaconda upload build_artifacts/osx-arm64/*.conda
+    anaconda upload build_artifacts/osx-arm64/*.conda
 
 
 ## PISM Dev
 
-Say you want to create a development environment that installs all prerequisites from *conda* and compiles PISM from sources.
+Say you want to create a development environment that installs all prerequisites from *conda* and compiles PISM from sources. Build from main branch
 
-    $ sh build.sh
+    bash ~/base/pism-conda/build-pism-dbg.sh
+  
+Or build a specific branch/tag
 
-## PISM Dev with 
-
-Say you want to create a development environment that installs all prerequisites from *conda* and compiles PISM from sources.
-
-    $ sh build-with-petsc.sh
-
+    bash ~/base/pism-conda/build-pism-dbg.sh my-branch
     
+After building, activate with:
+
+    mamba activate pism-dbg
+    export PISM_DIR=$HOME/pism-dbg
+    export PYTHONPATH=$HOME/pism-dbg/lib/python3.13/site-packages:$PYTHONPATH
+    export PATH=$HOME/pism-dbg/bin:$PATH 
