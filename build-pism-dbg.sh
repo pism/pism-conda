@@ -47,6 +47,7 @@ cmake -D CMAKE_CXX_FLAGS="-g -O0" \
       -D CMAKE_INSTALL_LIBDIR=lib \
       -D Python3_EXECUTABLE="${CONDA_PREFIX}/bin/python" \
       -D Pism_DEBUG=YES \
+      -D Pism_BUILD_DOCS=YES \
       -D Pism_BUILD_PYTHON_BINDINGS=YES \
       -D Pism_ENABLE_DOCUMENTATION=NO \
       -D Pism_PKG_CONFIG_STATIC=NO \
