@@ -10,7 +10,7 @@ build_dir=$HOME/pism-dbg
 env_name=pism-dbg
 
 # ── Create / update conda environment ──────────────────────────────────
-mamba env create -f ~/base/pism-conda/environment-dbg.yml
+mamba env create -f environment-dbg.yml
 eval "$(mamba shell hook --shell bash)"
 mamba activate ${env_name}
 
