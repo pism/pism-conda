@@ -12,18 +12,18 @@ Get pism-conda source from GitHub:
     git clone git@github.com:pism/pism-conda.git
     cd pism-conda
 
-Now create a conda environment named *pism-conda*. This installs a barebones environment suitable to build *staged-recipies*.
+Now create a conda environment named *pism-conda*. This installs a bare bones environment suitable to build *staged-recipes*.
 
     conda env create -f environment.yml
     conda activate pism-conda
 
 
-## Clone pism/staged-recipies. How can I just checkout pism-channel?
+## Clone pism/staged-recipes. How can I just checkout pism-channel?
 
     cd ..
-    mkdir -p pism-staged-recipies
+    mkdir -p pism-staged-recipes
     git clone git@github.com:pism/staged-recipes.git . || (git checkout pism-channel && git pull)
-    cd pism-staged-recipies
+    cd pism-staged-recipes
     pixi install
     
     
