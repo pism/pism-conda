@@ -12,9 +12,9 @@ Get pism-conda source from GitHub:
     git clone git@github.com:pism/pism-conda.git
     cd pism-conda
 
-Now create a conda environment named *pism-dev*. This installs a barebones environment suitable to build *staged-recipies*.
+Now create a conda environment named *pism-conda*. This installs a barebones environment suitable to build *staged-recipies*.
 
-    conda env create -f environment-conda.yml
+    conda env create -f environment.yml
     conda activate pism-conda
 
 

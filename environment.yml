@@ -3,6 +3,7 @@ channels:
   - conda-forge
 dependencies:
   - anaconda-client
-  - wget
+  - grayskull
   - pixi
-  - python=3.11.7
+  - python
+  - wget
