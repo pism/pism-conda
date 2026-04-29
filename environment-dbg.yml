@@ -32,6 +32,7 @@ dependencies:
   - libopenblas
   - petsc
   - petsc4py
+  - scikit-build-core
   - yac=*=*openmpi*
   - yaxt=*=*openmpi*
   - ncview
