@@ -80,15 +80,9 @@ or
 
 Say you want to create a development environment that installs all prerequisites from *conda* and compiles PISM from sources. Build from main branch
 
-    bash ~/base/pism-conda/build-pism-dbg.sh
-  
-Or build a specific branch/tag
+    conda env create -f environment-dbg.yml
+    git clone https://github.com/pism/pism.git
+    cd pism
+    CMAKE_BUILD_PARALLEL_LEVEL=8 pip install --no-build-isolation -v .
 
-    bash ~/base/pism-conda/build-pism-dbg.sh my-branch
-    
-After building, activate with:
-
-    mamba activate pism-dbg
-    export PISM_DIR=$HOME/pism-dbg
-    export PYTHONPATH=$HOME/pism-dbg/lib/python3.13/site-packages:$PYTHONPATH
-    export PATH=$HOME/pism-dbg/bin:$PATH 
+where N=8 is the number of parallel builds.
