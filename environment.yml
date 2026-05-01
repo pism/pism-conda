@@ -3,7 +3,9 @@ channels:
   - conda-forge
 dependencies:
   - anaconda-client
+  - conda-recipe-manager
   - grayskull
+  - rattler-build
   - pixi
   - python
   - wget

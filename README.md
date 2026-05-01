@@ -30,7 +30,7 @@ Now create a conda environment named *pism-conda*. This installs a bare bones en
     
 ## PISM packages
 
-The *pism-channel* currently has packages for *yaxt*, *yac*, and *pism* (stable). Change into the *recipies/package* directory, where *package* is the package you want to update. Edit the *build.sh* and *meta.yml* files.
+The *pism-channel* currently has packages for *yaxt*, *yac*, and *pism* (stable). Change into the *recipes/package* directory, where *package* is the package you want to update. Edit the *build.sh* and *meta.yml* files.
 
 ### Updating a package
 
